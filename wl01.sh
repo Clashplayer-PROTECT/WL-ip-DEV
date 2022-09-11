@@ -91,7 +91,7 @@ $IPTABLES -A OUTPUT -p tcp --destination-port 30121 -j DROP
 
 
 $IPTABLES -A INPUT -p udp -m udp --dport 30121 -m set --match-set whitelist-asn src -j ACCEPT
-
+$IPTABLES -A INPUT -p udp -m udp --dport 30121 -m set --match-set blacklist-asn src -j DROP
 
 
 $IPTABLES -A INPUT -s 65.21.109.87 -j ACCEPT # Mysql TEXHEBERG
